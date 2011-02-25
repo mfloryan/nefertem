@@ -19,7 +19,7 @@
 
     wp_enqueue_script( "jquery" );
     wp_enqueue_script( 'modernizr', plugins_url('js/modernizr-1.7.min.js',__FILE__), array(), '1.7', false );
-    wp_enqueue_script( 'nefertem', plugins_url('js/nefertem.js',__FILE__), array(), '1.0', true );
+    wp_enqueue_script( 'nefertem', plugins_url('js/nefertem.js',__FILE__), array('jquery'), '1.0', true );
 
 ?>
 <!DOCTYPE html>
