@@ -17,6 +17,8 @@
     For the full license see the LICENSE file.
  */
 
+    wp_enqueue_script("jquery");
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
