@@ -25,6 +25,64 @@ Copyright (C) 2011 Marcin Floryan, mmsquare limited, http://www.mmsquare.com/
 */
 
 
+body {
+    /*font-size: 16px;*/
+    /*font-family: 'Ubuntu', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif*/
+    /*font-family:  'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;*/
+    font-family: 'Georgia', serif;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+}
+
+h3 {
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    font-size: 1.2em;
+
+    /*border-bottom: solid 1px white;*/
+    margin-bottom: 6px;
+}
+
+header {
+    background-color: #82005a;
+    color: white;
+}
+
+section {
+    color: white;
+    padding: 10px;
+    background-color: #3c233a;
+    line-height: 1.2em;
+}
+
+footer {
+
+}
+
+.spacer {
+    height: 20px;
+}
+
+.margin10 {
+    margin:  10px;
+}
+
+aside#sidebar {
+    background-color: #28233c;
+    color: white;
+    padding: 5px;
+}
+
 .aligncenter, div.aligncenter {
 	display: block;
 	margin-left: auto;
