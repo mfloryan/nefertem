@@ -36,7 +36,10 @@ h1 {
     font-size: 3em;
     font-weight: 500;
     font-family: 'Ubuntu';
+    color: white;
 }
+
+
 
 h2 {
     font-size: 1.2em;
@@ -58,6 +61,54 @@ header {
     color: white;
 }
 
+header hgroup {
+    margin: 10px;
+}
+
+a.header {
+    text-decoration: none;
+}
+
+a.header:hover h1 {
+    color: #ffff55;
+
+}
+
+a.metro {
+    text-decoration: none;
+}
+
+a.metro:hover h3 {
+    color: #ffff55;
+}
+
+a.rss {
+    display: block;
+    float:right;
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('rss.png');
+    background-position: 0 0;
+}
+
+a.rss:hover {
+    background-position: -20px 0px;
+}
+
+.search {
+    margin-top: 10px;
+    padding: 5px 20px 5px 5px;
+    border: solid 1px white;
+    background-image: url('search.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.search:focus {
+    border: solid 1px #ffff55;
+}
+
 section {
     color: white;
     padding: 10px;
@@ -67,6 +118,15 @@ section {
 
 footer {
 
+}
+
+
+.marcin100 {
+    width: 85px;
+    height: 85px;
+    float: right;
+    background-color: #ffff55;
+    padding: 7px;
 }
 
 .spacer {
