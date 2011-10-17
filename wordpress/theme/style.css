@@ -56,9 +56,15 @@ h3 {
     margin-bottom: 6px;
 }
 
+header.index {
+    background-color: #82005a;
+    color: white;
+}
+
 header {
     background-color: #82005a;
     color: white;
+    background-image: url('stripes-bar.png');
 }
 
 header hgroup {
