@@ -26,49 +26,84 @@ Copyright (C) 2011 Marcin Floryan, mmsquare limited, http://www.mmsquare.com/
 
 
 body {
-    /*font-size: 16px;*/
+    font-size: 16px;
     /*font-family: 'Ubuntu', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif*/
     /*font-family:  'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;*/
     font-family: 'Georgia', serif;
+    color: #222;
+    background-image: url('images/stripes-bar.png');
+    background-position: center;
+}
+
+.page_container {
+    background-color: white;
+    padding-bottom: 20px;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2.4em;
     font-weight: 500;
     font-family: 'Ubuntu';
     color: white;
 }
 
-
+.index h1 {
+    font-size: 3em;
+}
 
 h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    color: White;
+}
+
+nav section h2 {
     font-size: 1.2em;
-    font-weight: normal;
-    letter-spacing: 0.1em;
+    padding-bottom: 5px;
 }
 
 h3 {
     font-weight: 500;
     font-family: 'Ubuntu';
-    font-size: 1.2em;
+    font-size: 1.3em;
 
     /*border-bottom: solid 1px white;*/
     margin-bottom: 6px;
 }
 
-header.index {
-    background-color: #82005a;
-    color: white;
-}
-
 header {
     background-color: #82005a;
     color: white;
-    background-image: url('stripes-bar.png');
+    background-image: url('images/stripes-bar.png');
+}
+
+.index header {
+    background-image: none;
+}
+
+#tagline {
+    display: table-cell;
+    vertical-align: bottom;
+    height: 2.4em;
+    font-style: italic;
+}
+
+.index #tagline {
+    height: 1em;
 }
 
 header hgroup {
     margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #82005a;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 a.header {
@@ -77,15 +112,15 @@ a.header {
 
 a.header:hover h1 {
     color: #ffff55;
-
 }
 
 a.metro {
     text-decoration: none;
 }
 
-a.metro:hover h3 {
+a.metro:hover h2 {
     color: #ffff55;
+    text-decoration: none;
 }
 
 a.rss {
@@ -94,7 +129,7 @@ a.rss {
     margin: 10px;
     width: 20px;
     height: 20px;
-    background-image: url('rss.png');
+    background-image: url('images/rss.png');
     background-position: 0 0;
 }
 
@@ -102,30 +137,87 @@ a.rss:hover {
     background-position: -20px 0px;
 }
 
-.search {
+.index .search {
     margin-top: 10px;
     padding: 5px 20px 5px 5px;
     border: solid 1px white;
-    background-image: url('search.png');
+    background-image: url('images/search.png');
     background-repeat: no-repeat;
     background-position: right;
 }
 
-.search:focus {
+.index .search:focus {
     border: solid 1px #ffff55;
 }
 
-section {
+nav section {
     color: white;
     padding: 10px;
     background-color: #3c233a;
     line-height: 1.2em;
 }
 
-footer {
+.page .search {
+    border: solid 1px #82005a;
+    margin: 5px;
+    padding: 2px 0;
+    width: 290px;
+    background-image: url('images/search.png');
+    background-repeat: no-repeat;
+    background-position: right;
 
 }
 
+article {
+    line-height: 1.5em;
+}
+
+article .header {
+    background-color: #28233c;
+    padding: 5px;
+}
+
+article .info {
+    color: #28233c;
+    font-size: 0.75em;
+    padding-left: 5px;
+    font-family: 'Ubuntu';
+    /*border: solid 1px #28233c;*/
+}
+
+
+article .info a {
+    text-decoration: none;
+}
+
+article .info a:hover {
+    text-decoration: underline;
+}
+
+article blockquote {
+    padding: 10px 10px 10px 50px;
+    background-color: #ffffa0;
+    background-image: url('images/quote.png');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    }
+
+footer {
+    font-size: 0.8em;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding:  5px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.right {
+    text-align: right;
+}
+
+.yellow {
+    background-color: #ffff55;
+}
 
 .marcin100 {
     width: 85px;
@@ -139,15 +231,77 @@ footer {
     height: 20px;
 }
 
+.spacer2 {
+    height: 10px;
+}
+
 .margin10 {
     margin:  10px;
 }
 
-aside#sidebar {
+.pad10 {
+    padding: 10px;
+}
+
+.index aside#sidebar {
     background-color: #28233c;
     color: white;
     padding: 5px;
 }
+
+aside {
+    font-size: 0.8em;
+    color: #3c233a;
+}
+
+.page aside h3 {
+    font-size: 1.3em;
+    background-color: #ffff55;
+    color: #82005a;
+    padding: 2px;
+}
+
+
+aside section {
+    margin-bottom: 15px;
+}
+
+.page nav {
+    overflow: auto;
+	width: 100%
+}
+
+.page nav ul li {
+    display: inline;
+}
+
+.page nav a {
+    display: block;
+    float: left;
+    padding: 5px 15px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    text-decoration: none;
+    color: #3c233a;
+    font-size: 1.1em;
+}
+
+.page nav a:hover {
+    color: #ffff55;
+    background-color: #3c233a;
+    text-decoration: none;
+}
+
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    list-style: disc;
+    display: list-item;
+}
+
 
 .aligncenter, div.aligncenter {
 	display: block;
