@@ -33,20 +33,22 @@
                 <div id="tagline" class="pad10"><?php bloginfo( 'description' ); ?></div>
             </div>
             <div class="omega grid_4">
-                <a href="http://rrs.com" class="rss" title="rss feed"></a>
+                <a href="<?php echo get_bloginfo('rss2_url'); ?>http://rrs.com" class="rss" title="rss feed"></a>
             </div>
         </header>
         <div class="clear spacer2"></div>
         <div class="grid_12 yellow">
             <div class="grid_8 alpha">
                 <nav class="topbar">
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Marcin</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Reading</a></li>
-                        <li><a href="">Quotes</a></li>
-                    </ul>
+                    <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
+<!--                    <ul>-->
+<!--                        <li><a href="">Home</a></li>-->
+<!--                        <li><a href="">Marcin</a></li>-->
+<!--                        <li><a href="">Blog</a></li>-->
+<!--                        <li><a href="">Reading</a></li>-->
+<!--                        <li><a href="">Quotes</a></li>-->
+<!--                    </ul>-->
                 </nav>
             </div>
             <div class="grid_4 right omega">

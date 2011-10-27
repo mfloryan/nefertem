@@ -13,7 +13,7 @@
             </hgroup>
         </div>
         <div class="omega grid_4">
-            <a href="http://rrs.com" class="rss" title="rss feed"></a>
+            <a href="<?php echo get_bloginfo('rss2_url'); ?>" class="rss" title="rss feed"></a>
             <label>
                 <input type="text" class="search"/>
             </label>

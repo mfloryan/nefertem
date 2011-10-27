@@ -35,5 +35,8 @@
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu:500' type='text/css' />
     <?php wp_head(); ?>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0 feed - all posts" href="<?php echo get_feed_link('rss2'); ?>" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0 feed - comments" href="<?php echo get_feed_link('comments_rss2'); ?>" />
+    <link rel="alternate" type="application/atom+xml" title="ATOM Feed - all posts" href="<?php echo get_feed_link('atom'); ?>" />
+    <link rel="alternate" type="application/atom+xml" title="ATOM Feed - comments" href="<?php echo get_feed_link('comments_atom'); ?>" />
 </head>
