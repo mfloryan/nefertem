@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" type="text/css" media="all" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/960.css" type="text/css" media="all" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Ubuntu:500' type='text/css' />
     <?php wp_head(); ?>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 

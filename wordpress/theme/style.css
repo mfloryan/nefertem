@@ -222,7 +222,7 @@ footer {
     padding: 10px;
 }
 
-.metro aside#sidebar {
+.nonmetro aside#sidebar {
     font-size: 0.8em;
     color: #3c233a;
 }
@@ -234,7 +234,7 @@ footer {
 }
 
 .nonmetro aside h3 {
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-color: #ffff55;
     color: #82005a;
     padding: 2px;

@@ -89,7 +89,7 @@
             eget
             elit nec lectus imperdiet consectetur. Proin feugiat faucibus scelerisque.
         </div>
-    </div>l
+    </div>
 
 <?php get_sidebar('home'); ?>
 <?php get_footer(); ?>
