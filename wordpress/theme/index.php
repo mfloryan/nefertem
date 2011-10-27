@@ -22,7 +22,6 @@
  */
 ?>
 <?php get_header(); ?>
-
         <div class="clear spacer2"></div>
         <div class="grid_8">
 
@@ -37,9 +36,10 @@
 					?>
 
 				<?php endwhile; ?>
+
+                <?php comments_template( '', true ); ?>
         </div>
 
 <?php get_sidebar(); ?>
-
 
 <?php get_footer(); ?>

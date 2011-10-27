@@ -204,7 +204,7 @@ article p {
     margin-bottom: 10px;
 }
 
-footer {
+footer#page-footer {
     font-size: 0.8em;
     margin-top: 20px;
     margin-bottom: 40px;

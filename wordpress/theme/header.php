@@ -17,9 +17,7 @@
     For the full license see the LICENSE file.
  */
 ?>
-
-<?php get_template_part("head") ?>
-
+<?php get_template_part("head"); ?>
 <body <?php body_class('page'); ?>>
 <div class="page_container">
 

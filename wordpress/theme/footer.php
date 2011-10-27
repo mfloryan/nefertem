@@ -23,7 +23,7 @@
 
 <div class="container_12">
     <div class="grid_12">
-        <footer>
+        <footer id="page-footer">
             Copyright &copy;
 <?php
     global $wpdb;
