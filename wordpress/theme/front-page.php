@@ -29,7 +29,7 @@
             <a class="metro" href="marcin.html">
                 <section>
                     <h2>Marcin</h2>
-                    <img src="images/marcin-85px.png" class="marcin100" alt="Marcin Floryan"/>
+                    <img src="<?php bloginfo('template_directory') ?>/images/marcin-85px.png" class="marcin100" alt="Marcin Floryan"/>
                     Suspendisse potenti. Nunc felis magna, consequat ut venenatis eu, consequat vitae ante. Donec
                     lobortis facilisis metus, at tincidunt mauris sodales at.
                 </section>
