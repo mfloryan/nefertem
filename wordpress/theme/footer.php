@@ -18,6 +18,7 @@
  */
 
 ?>
+</div> <!-- container_12 -->
 </div> <!-- page_container -->
 
 <div class="container_12">

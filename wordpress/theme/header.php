@@ -16,25 +16,40 @@
 
     For the full license see the LICENSE file.
  */
-
-    wp_enqueue_script( "jquery" );
-    wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/modernizr-1.7.min.js', array(), '1.7', false );
-    wp_enqueue_script( 'nefertem', get_template_directory_uri().'/js/nefertem.js', array('jquery'), '1.0', true );
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php
-        bloginfo( 'name');
-        wp_title();
-    ?></title>
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/960.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
-    <?php wp_head(); ?>
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-</head>
-<body <?php body_class(); ?>>
+<?php get_template_part("head") ?>
+
+<body <?php body_class('page'); ?>>
 <div class="page_container">
+
+<div class="container_12">
+        <div class="clear spacer"></div>
+        <header class="grid_12">
+            <div class="alpha grid_4">
+                <a href="<?php echo get_home_url(); ?>" class="header"><h1 class="pad10"><?php bloginfo( 'name' ); ?></h1></a>
+            </div>
+            <div class="grid_4">
+                <div id="tagline" class="pad10"><?php bloginfo( 'description' ); ?></div>
+            </div>
+            <div class="omega grid_4">
+                <a href="http://rrs.com" class="rss" title="rss feed"></a>
+            </div>
+        </header>
+        <div class="clear spacer2"></div>
+        <div class="grid_12 yellow">
+            <div class="grid_8 alpha">
+                <nav>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Marcin</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Reading</a></li>
+                        <li><a href="">Quotes</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="grid_4 right omega">
+                <input type="text" class="search"/>
+            </div>
+        </div>
