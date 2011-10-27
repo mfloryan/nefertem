@@ -18,6 +18,34 @@
  */
 
 ?>
+</div> <!-- page_container -->
+
+<div class="container_12">
+    <div class="grid_12">
+        <footer>
+            Copyright &copy;
+<?php
+    global $wpdb;
+    $post_datetimes = $wpdb->get_row($wpdb->prepare("SELECT YEAR(min(post_date_gmt)) AS firstyear, YEAR(max(post_date_gmt)) AS lastyear FROM $wpdb->posts WHERE post_date_gmt > 1970"));
+    if ($post_datetimes) {
+        $firstpost_year = $post_datetimes->firstyear;
+        $lastpost_year = $post_datetimes->lastyear;
+
+        $copyright = $firstpost_year;
+        if($firstpost_year != $lastpost_year) {
+            $copyright .= ' &ndash; '. $lastpost_year;
+        }
+        echo $copyright;
+    }
+?>
+ <b><?php bloginfo('name'); ?></b>
+            licensed under <a rel="license" href="license.html"><img alt="Creative Commons Licence" class="cc-logo" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+            | Powered by <a href="http://wordpress.org/" rel="generator" title="Semantic Personal Publishing Platform">WordPress</a>
+            | <a href="https://github.com/mfloryan/nefertem">nefertem</a> theme based on <a href="http://960.gs/">960.gs grid</a> using <a href="http://font.ubuntu.com/" ref="font">Ubuntu</a> font
+        </footer>
+    </div>
+</div>
+
 <?php wp_footer(); ?>
 </body>
 </html>

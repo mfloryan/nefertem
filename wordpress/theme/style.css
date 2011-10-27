@@ -303,6 +303,11 @@ li {
 }
 
 
+img.cc-logo {
+    border-width:0;
+    vertical-align:top;
+}
+
 .aligncenter, div.aligncenter {
 	display: block;
 	margin-left: auto;

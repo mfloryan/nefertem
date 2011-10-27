@@ -18,19 +18,23 @@
  */
 
     wp_enqueue_script( "jquery" );
-    wp_enqueue_script( 'modernizr', plugins_url('js/modernizr-1.7.min.js',__FILE__), array(), '1.7', false );
-    wp_enqueue_script( 'nefertem', plugins_url('js/nefertem.js',__FILE__), array('jquery'), '1.0', true );
-
+    wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/modernizr-1.7.min.js', array(), '1.7', false );
+    wp_enqueue_script( 'nefertem', get_template_directory_uri().'/js/nefertem.js', array('jquery'), '1.0', true );
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php wp_title(); ?> <?php bloginfo( 'name' ); ?></title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
+    <title><?php
+        bloginfo( 'name');
+        wp_title();
+    ?></title>
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/reset.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/960.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
     <?php wp_head(); ?>
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
 </head>
 <body <?php body_class(); ?>>
+<div class="page_container">
