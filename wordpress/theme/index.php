@@ -37,8 +37,6 @@
 					?>
 
 				<?php endwhile; ?>
-
-
         </div>
 
 <?php get_sidebar(); ?>

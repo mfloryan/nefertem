@@ -57,7 +57,46 @@ function register_my_menus() {
   );
 }
 
+function nefertem_theme_admin_menu() {
+	add_theme_page('Nefertem Theme Options', 'Nefertem Theme', 'read', 'nefertem-theme-options', 'nefertem_theme_admin_options');
+}
+
+function nefertem_theme_admin_options_init() {
+    register_setting( 'nefertem-theme', 'nefertem-options' , 'nefertem_options_validate');
+    add_settings_section('nefertem-options-section', 'Main Settings', 'nefertem_options_section_text', 'nefertem');
+    add_settings_field('google-profile', 'Google Profile URL', 'nefertem_setting_string', 'nefertem', 'nefertem-options-section');
+}
+
+function nefertem_options_section_text() {
+    echo '<p>Configure custom plugin settings</p>';
+}
+
+function nefertem_setting_string() {
+    $options = get_option('nefertem-options');
+    echo "<input id='google-profile' name='nefertem-options[google-profile]' size='40' type='text' value='{$options['google-profile']}' />";
+}
+
+function nefertem_options_validate($input) {
+    return $input;
+}
+
+
+function nefertem_theme_admin_options() {
+?>
+    <div>
+    <h2>Nefertem Theme Options</h2>
+    Options to tweak for the Nefertem Theme.
+    <form action="options.php" method="post">
+    <?php settings_fields('nefertem-theme'); ?>
+    <?php do_settings_sections('nefertem'); ?>
+    <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
+    </form></div>
+<?php
+}
+
 add_action( 'init', 'register_my_menus' );
+add_action('admin_menu', 'nefertem_theme_admin_menu');
+add_action('admin_init', 'nefertem_theme_admin_options_init');
 
 
 ?>
