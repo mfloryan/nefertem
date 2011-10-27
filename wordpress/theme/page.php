@@ -23,29 +23,16 @@
 ?>
 <?php get_header(); ?>
 
-<div class="clear spacer2"></div>
-<div class="grid_8">
+        <div class="clear spacer2"></div>
+        <div class="grid_8">
 
-    <article>
-        <div class="header"><h2>Blog archive</h2></div>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-<?php
-        $year = 0;
-        $allPosts = get_posts(array('numberposts' => -1));
-        ?>
-
-        <?php foreach ($allPosts as $post) : ?>
-        <?php
-            if (get_the_time('Y') != $year) {
-                $year = get_the_time('Y');
-                echo "<h3>$year</h3>";
-        }
-        ?>
-        <span style="width: 4em; display: inline-block; text-align: right;"><?php the_time('M d:'); ?></span> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
-        <?php endforeach; ?>
-
-    </article>
-</div>
+					<?php
+						get_template_part( 'content','page');
+					?>
+				<?php endwhile; ?>
+        </div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

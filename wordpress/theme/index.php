@@ -25,76 +25,20 @@
 
         <div class="clear spacer2"></div>
         <div class="grid_8">
-            <article>
 
-                <div class="header">
-                    <h2>Building trust requires risk</h2>
-                </div>
-                <div class="info">September 25th, 2011 | <a href="">trust</a> <a href="">agile</a></div>
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'content');
+					?>
+
+				<?php endwhile; ?>
 
 
-                <p>Suspendisse potenti. Nunc felis magna, consequat ut venenatis eu, consequat vitae ante. Donec
-                    lobortis
-                    facilisis
-                    metus, at tincidunt mauris sodales at. Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur
-                    ridiculus mus. <a href="">Nullam pretium</a> luctus fermentum. Cras erat arcu, auctor et posuere in,
-                    mollis a erat.
-                    Pellentesque metus arcu, pretium ac lacinia id, sagittis sit amet leo. Curabitur venenatis turpis
-                    elit, sed
-                    aliquam eros. Donec id ante vel mauris accumsan accumsan ac eu sem. Maecenas accumsan suscipit
-                    massa, a
-                    feugiat
-                    nunc iaculis at. Suspendisse ut odio hendrerit ligula posuere ornare. Integer sed fermentum dolor.
-                    Nullam
-                    sodales ligula magna.
-                <blockquote>
-                    Morbi blandit odio sit amet orci consequat interdum.Nulla ultrices metus vitae metus
-                    facilisis tempus. Nunc feugiat, enim in elementum sodales, nunc felis sodales nibh, vel semper nunc
-                    erat non
-                    nisi.
-                </blockquote>
-
-                Sed varius, nunc non commodo sodales, nisi libero tincidunt mi, eget convallis nulla velit condimentum
-                nisl. In et libero justo, non porttitor nibh. Curabitur risus urna, pellentesque vitae lobortis ut,
-                auctor
-                nec
-                nisl. Cras lobortis justo in erat luctus ut feugiat erat vehicula. Morbi vestibulum nulla sit amet
-                mauris
-                condimentum sollicitudin. Sed dolor ligula, ultricies convallis ullamcorper eu, fermentum vel neque. Sed
-                eget
-                elit nec lectus imperdiet consectetur. Proin feugiat faucibus scelerisque.</p>
-
-                <p>Suspendisse potenti. Nunc felis magna, consequat ut venenatis eu, consequat vitae ante. Donec
-                    lobortis
-                    facilisis
-                    metus, at tincidunt mauris sodales at. Cum sociis natoque penatibus et magnis dis parturient montes,
-                    nascetur
-                    ridiculus mus. Nullam pretium luctus fermentum. Cras erat arcu, auctor et posuere in, mollis a erat.
-                    Pellentesque metus arcu, pretium ac lacinia id, sagittis sit amet leo. Curabitur venenatis turpis
-                    elit, sed
-                    aliquam eros. Donec id ante vel mauris accumsan accumsan ac eu sem. Maecenas accumsan suscipit
-                    massa, a
-                    feugiat
-                    nunc iaculis at. Suspendisse ut odio hendrerit ligula posuere ornare. Integer sed fermentum dolor.
-                    Nullam
-                    sodales ligula magna. Morbi blandit odio sit amet orci consequat interdum.Nulla ultrices metus vitae
-                    metus
-                    facilisis tempus. Nunc feugiat, enim in elementum sodales, nunc felis sodales nibh, vel semper nunc
-                    erat non
-                    nisi. Sed varius, nunc non commodo sodales, nisi libero tincidunt mi, eget convallis nulla velit
-                    condimentum
-                    nisl. In et libero justo, non porttitor nibh. Curabitur risus urna, pellentesque vitae lobortis ut,
-                    auctor
-                    nec
-                    nisl. Cras lobortis justo in erat luctus ut feugiat erat vehicula. Morbi vestibulum nulla sit amet
-                    mauris
-                    condimentum sollicitudin. Sed dolor ligula, ultricies convallis ullamcorper eu, fermentum vel neque.
-                    Sed
-                    eget
-                    elit nec lectus imperdiet consectetur. Proin feugiat faucibus scelerisque.</p>
-
-            </article>
         </div>
 
 <?php get_sidebar(); ?>

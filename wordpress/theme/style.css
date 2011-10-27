@@ -24,7 +24,6 @@ Copyright (C) 2011 Marcin Floryan, mmsquare limited, http://www.mmsquare.com/
     For the full license see the LICENSE file.
 */
 
-
 body {
     font-size: 16px;
     /*font-family: 'Ubuntu', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif*/
@@ -64,7 +63,7 @@ h3 {
     font-size: 1.3em;
 
     /*border-bottom: solid 1px white;*/
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 header {
@@ -111,7 +110,7 @@ a.header:hover h1 {
 
 a.rss {
     display: block;
-    float:right;
+    float: right;
     margin: 10px;
     width: 20px;
     height: 20px;
@@ -151,6 +150,26 @@ article {
     line-height: 1.5em;
 }
 
+article h2 a {
+    color: white;
+}
+
+article h2 a:hover {
+    color: #ffff55;
+    text-decoration: none;
+}
+
+article h3,
+article h4,
+article h5 {
+    color: #28233c;
+}
+
+article h3 {
+    margin-top: 5px;
+    border-bottom: solid 3px #28233c;
+}
+
 article .header {
     background-color: #28233c;
     padding: 5px;
@@ -164,7 +183,6 @@ article .info {
     /*border: solid 1px #28233c;*/
 }
 
-
 article .info a {
     text-decoration: none;
 }
@@ -175,19 +193,24 @@ article .info a:hover {
 
 article blockquote {
     padding: 10px 10px 10px 50px;
-    background-color: #ffffa0;
+    background-color: #ffd;
     background-image: url('images/quote.png');
     background-repeat: no-repeat;
     background-position: 10px 10px;
-    }
+    margin-bottom: 5px;
+}
+
+article p {
+    margin-bottom: 10px;
+}
 
 footer {
     font-size: 0.8em;
     margin-top: 20px;
     margin-bottom: 40px;
-    padding:  5px;
+    padding: 5px;
     color: white;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .right {
@@ -215,7 +238,7 @@ footer {
 }
 
 .margin10 {
-    margin:  10px;
+    margin: 10px;
 }
 
 .pad10 {
@@ -275,11 +298,16 @@ nav.metro a.metro:hover h2 {
 
 nav.topbar {
     overflow: auto;
-	width: 100%
+    width: 100%
 }
 
 nav.topbar ul li {
     display: inline;
+}
+
+nav.topbar ul li.current-menu-item a {
+    border-bottom: solid 3px #3c233a;
+    padding-bottom: 2px;
 }
 
 nav.topbar a {
@@ -298,7 +326,6 @@ nav.topbar a:hover {
     background-color: #3c233a;
     text-decoration: none;
 }
-
 
 ul {
     padding-left: 20px;
@@ -328,42 +355,46 @@ ul.tweets li .timesince {
     color: #ffff55;
 }
 
-
 img.cc-logo {
-    border-width:0;
-    vertical-align:top;
+    border-width: 0;
+    vertical-align: top;
 }
 
 .aligncenter, div.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .alignleft {
-	float: left;
+    float: left;
 }
+
 .alignright {
-	float: right;
+    float: right;
 }
+
 .wp-caption {
-	background-color: #f3f3f3;
-	border: 1px solid #ddd;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
     border-radius: 3px; /* optional rounded corners for browsers that support it */
     -khtml-border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-	margin: 10px;
-	padding-top: 4px;
-	text-align: center;
+    margin: 10px;
+    padding-top: 4px;
+    text-align: center;
 }
+
 .wp-caption img {
-	border: 0 none;
-	margin: 0;
-	padding: 0;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
 }
+
 .wp-caption p.wp-caption-text {
-	font-size: 11px;
-	line-height: 17px;
-	margin: 0;
-	padding: 0 4px 5px;
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
 }
