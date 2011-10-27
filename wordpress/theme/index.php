@@ -24,7 +24,7 @@
 <?php get_header('home'); ?>
 
  <div class="grid_8">
-        <nav>
+        <nav class="metro">
             <div class="grid_4 alpha">
                 <a class="metro" href="marcin.html">
                     <section>
@@ -89,7 +89,7 @@
             eget
             elit nec lectus imperdiet consectetur. Proin feugiat faucibus scelerisque.
         </div>
-    </div>
+    </div>l
 
 <?php get_sidebar('home'); ?>
 <?php get_footer(); ?>

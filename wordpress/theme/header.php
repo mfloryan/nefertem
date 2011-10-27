@@ -39,7 +39,7 @@
         <div class="clear spacer2"></div>
         <div class="grid_12 yellow">
             <div class="grid_8 alpha">
-                <nav>
+                <nav class="topbar">
                     <ul>
                         <li><a href="">Home</a></li>
                         <li><a href="">Marcin</a></li>

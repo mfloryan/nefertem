@@ -58,11 +58,6 @@ h2 {
     color: White;
 }
 
-nav section h2 {
-    font-size: 1.2em;
-    padding-bottom: 5px;
-}
-
 h3 {
     font-weight: 500;
     font-family: 'Ubuntu';
@@ -78,7 +73,7 @@ header {
     background-image: url('images/stripes-bar.png');
 }
 
-.index header {
+header.metro {
     background-image: none;
 }
 
@@ -114,15 +109,6 @@ a.header:hover h1 {
     color: #ffff55;
 }
 
-a.metro {
-    text-decoration: none;
-}
-
-a.metro:hover h2 {
-    color: #ffff55;
-    text-decoration: none;
-}
-
 a.rss {
     display: block;
     float:right;
@@ -148,13 +134,6 @@ a.rss:hover {
 
 .index .search:focus {
     border: solid 1px #ffff55;
-}
-
-nav section {
-    color: white;
-    padding: 10px;
-    background-color: #3c233a;
-    line-height: 1.2em;
 }
 
 .page .search {
@@ -243,18 +222,18 @@ footer {
     padding: 10px;
 }
 
-.index aside#sidebar {
+.metro aside#sidebar {
+    font-size: 0.8em;
+    color: #3c233a;
+}
+
+.metro aside#sidebar {
     background-color: #28233c;
     color: white;
     padding: 5px;
 }
 
-aside {
-    font-size: 0.8em;
-    color: #3c233a;
-}
-
-.page aside h3 {
+.nonmetro aside h3 {
     font-size: 1.3em;
     background-color: #ffff55;
     color: #82005a;
@@ -262,20 +241,41 @@ aside {
 }
 
 
-aside section {
+.nonmetro aside#sidebar section {
     margin-bottom: 15px;
 }
 
-.page nav {
+nav.metro section {
+    color: white;
+    padding: 10px;
+    background-color: #3c233a;
+    line-height: 1.2em;
+}
+
+nav.metro section h2 {
+    font-size: 1.2em;
+    padding-bottom: 5px;
+}
+
+nav.metro a.metro {
+    text-decoration: none;
+}
+
+nav.metro a.metro:hover h2 {
+    color: #ffff55;
+    text-decoration: none;
+}
+
+nav.topbar {
     overflow: auto;
 	width: 100%
 }
 
-.page nav ul li {
+nav.topbar ul li {
     display: inline;
 }
 
-.page nav a {
+nav.topbar a {
     display: block;
     float: left;
     padding: 5px 15px;
@@ -286,7 +286,7 @@ aside section {
     font-size: 1.1em;
 }
 
-.page nav a:hover {
+nav.topbar a:hover {
     color: #ffff55;
     background-color: #3c233a;
     text-decoration: none;

@@ -1,4 +1,4 @@
- <div class="grid_4">
+ <div class="grid_4 metro">
         <aside id="sidebar">
             <section>
             <h3>Twitter</h3>

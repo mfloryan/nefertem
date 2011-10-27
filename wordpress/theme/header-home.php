@@ -1,11 +1,11 @@
 <?php get_template_part("head") ?>
 
-<body <?php body_class('index'); ?>>
+<body <?php body_class(); ?>>
 
 <div class="page_container">
 <div class="container_12">
     <div class="clear spacer"></div>
-    <header class="grid_12">
+    <header class="grid_12 metro">
         <div class="alpha grid_8">
             <hgroup>
                 <a href="<?php echo get_home_url(); ?>" class="header"><h1><?php bloginfo( 'name' ); ?></h1></a>

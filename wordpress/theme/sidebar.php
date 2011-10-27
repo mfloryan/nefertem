@@ -18,7 +18,7 @@
  */
 
 ?>
-<div class="grid_4">
+<div class="grid_4 nonmetro">
             <aside id="sidebar">
 
                 <section>
