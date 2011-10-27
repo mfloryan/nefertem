@@ -4,5 +4,5 @@
     <br />
     <?php the_content(); ?>
 
-    <div class="info"> Last updated: <?php the_modified_date('D j F Y H:m') ?> </div>
+    <div class="info"> Last updated: <time datetime="<?php the_date('Y-m-d') ?>"><?php the_modified_date('D j F Y H:m') ?></time></div>
 </article>

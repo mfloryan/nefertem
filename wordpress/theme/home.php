@@ -41,7 +41,7 @@
                 echo "<h3>$year</h3>";
         }
         ?>
-        <span style="width: 4em; display: inline-block; text-align: right;"><?php the_time('M d:'); ?></span> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
+        <span style="width: 4em; display: inline-block; text-align: right;"><time datetime="<?php the_date('Y-m-d') ?>"><?php the_time('M d:'); ?></time></span> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
         <?php endforeach; ?>
 
     </article>
