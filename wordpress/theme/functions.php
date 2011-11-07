@@ -60,22 +60,63 @@ function nefertem_theme_admin_menu() {
 function nefertem_theme_admin_options_init() {
     register_setting( 'nefertem-theme', 'nefertem-options' , 'nefertem_options_validate');
     add_settings_section('nefertem-options-section', 'Main Settings', 'nefertem_options_section_text', 'nefertem');
-    add_settings_field('google-profile', 'Google Profile URL', 'nefertem_setting_string', 'nefertem', 'nefertem-options-section');
+    add_settings_field('google-profile',
+                       'Google Profile URL',
+                       'nefertem_setting_string',
+                       'nefertem',
+                       'nefertem-options-section',
+                       array('id' => "google-profile"));
+
+    add_settings_field('metro-link-1', 'Link for Metro 1', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-1"));
+
+    add_settings_field('metro-snip-1', 'Snippet for Metro 1', 'nefertem_setting_textarea', 'nefertem', 'nefertem-options-section', array('id' => "metro-snip-1"));
+    add_settings_field('metro-link-2', 'Link for Metro 2 (Blog)', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-2"));
+    add_settings_field('metro-link-3', 'Link for Metro 3', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-3"));
+    add_settings_field('metro-snip-3', 'Snippet for Metro 3', 'nefertem_setting_textarea', 'nefertem', 'nefertem-options-section', array('id' => "metro-snip-3"));
+    add_settings_field('metro-link-4', 'Link for Metro 4', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-4"));
+    add_settings_field('metro-snip-4', 'Snippet for Metro 4', 'nefertem_setting_textarea', 'nefertem', 'nefertem-options-section', array('id' => "metro-snip-4"));
 }
 
 function nefertem_options_section_text() {
-    echo '<p>Configure custom plugin settings</p>';
+    echo '<p>Configure theme settings</p>';
 }
 
-function nefertem_setting_string() {
+function nefertem_setting_string($args) {
+    $id = $args['id'];
     $options = get_option('nefertem-options');
-    echo "<input id='google-profile' name='nefertem-options[google-profile]' size='40' type='text' value='{$options['google-profile']}' />";
+    echo "<input id='$id' name='nefertem-options[{$id}]' size='40' type='text' value='{$options[$id]}' />";
+}
+
+function nefertem_setting_textarea($args) {
+    $id = $args['id'];
+    $options = get_option('nefertem-options');
+    echo "<textarea rows=\"4\" cols=\"40\" id='$id' name='nefertem-options[{$id}]'>{$options[$id]}</textarea>";
+}
+
+function nefertem_setting_page($args) {
+    $id = $args['id'];
+    $options = get_option('nefertem-options');
+
+    echo "<select name=\"nefertem-options[{$id}]\" id=\"$id\">";
+    echo '<option value=""></option>';
+    $pages = get_pages();
+    foreach ($pages as $page) {
+        $link = get_page_link( $page->ID );
+        echo '<option value="' . $link .'"';
+        if ($options[$id] == $link) {
+            echo ' selected="selected"';
+        }
+        echo '>';
+        echo "{$page->post_title} ({$page->ID})";
+        echo '</option>';
+    }
+    echo '</select>';
+
 }
 
 function nefertem_options_validate($input) {
     return $input;
 }
-
 
 function nefertem_theme_admin_options() {
 ?>
