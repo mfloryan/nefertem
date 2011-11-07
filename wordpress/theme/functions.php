@@ -36,15 +36,6 @@ if (function_exists('register_sidebar')) {
                           'before_title' => '<h3>',
                           'after_title' => '</h3>',
                      ));
-    register_sidebar(array(
-                          'id' => 'nefertem-metro-nav',
-                          'name' => 'Metro Navigation',
-                          'description' => 'Widgets for navigation on the home page',
-                          'before_widget' => '<section>',
-                          'after_widget' => '</section>',
-                          'before_title' => '<h3>',
-                          'after_title' => '</h3>',
-                     ));
 }
 
 function register_my_menus() {
