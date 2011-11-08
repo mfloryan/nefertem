@@ -26,21 +26,19 @@
 
 <div class="grid_8">
     <nav class="metro">
+<?php if ($options['metro-link-1']):?>
         <div class="grid_4 alpha">
-            <a class="metro" href="<?php echo get_page_uri($options['metro-link-1']);?>">
-                <section>
-                    <h2>Marcin</h2>
-                    <img src="<?php bloginfo('template_directory') ?>/images/marcin-85px.png" class="marcin100" alt="Marcin Floryan"/>
-                    Suspendisse potenti. Nunc felis magna, consequat ut venenatis eu, consequat vitae ante. Donec
-                    lobortis facilisis metus, at tincidunt mauris sodales at.
+                <section onclick="document.location='<?php echo get_page_link($options['metro-link-1']);?>'">
+                    <a class="metro" href="<?php echo get_page_link($options['metro-link-1']);?>"><h2>Marcin</h2></a>
+                    <?php echo $options['metro-snip-1'] ?>
                 </section>
             </a>
         </div>
+<?php endif; ?>
+<?php if ($options['metro-link-2']):?>
         <div class="grid_4 omega">
-                <section>
-                    <a class="metro" href="<?php echo get_page_uri($options['metro-link-2']);?>">
-                    <h2>Blog</h2>
-                    </a>
+                <section onclick="document.location='<?php echo get_page_link($options['metro-link-2']);?>'">
+                    <a class="metro" href="<?php echo get_page_link($options['metro-link-2']);?>"><h2>Blog</h2></a>
                     Recent blog posts:
                     <?php
                     {
@@ -59,22 +57,24 @@
                     ?>
                 </section>
         </div>
-<!--        <div class="clear spacer"></div>-->
-<!--        <div class="grid_4 alpha">-->
-<!--            <section>-->
-<!--                <h2>Reading</h2>-->
-<!--                Suspendisse potenti. Nunc felis magna, consequat ut venenatis eu, consequat vitae ante. Donec lobortis-->
-<!--                facilisis metus, at tincidunt mauris sodales at.-->
-<!--            </section>-->
-<!--        </div>-->
-<!--        <div class="grid_4 omega">-->
-<!--            <section>-->
-<!--                <h2>Quotes</h2>-->
-<!--                Suspendisse potenti. Nunc felis magna, consequat ut venenatis eu, consequat vitae ante. Donec lobortis-->
-<!--                facilisis-->
-<!--                metus, at tincidunt mauris sodales at.-->
-<!--            </section>-->
-<!--        </div>-->
+<?php endif; ?>
+        <div class="clear spacer"></div>
+<?php if ($options['metro-link-3']):?>
+        <div class="grid_4 alpha">
+            <section onclick="document.location='<?php echo get_page_link($options['metro-link-3']);?>'">
+                <a class="metro" href="<?php echo get_page_link($options['metro-link-3']);?>"><h2>Books</h2></a>
+                <?php echo $options['metro-snip-3'] ?>
+            </section>
+        </div>
+<?php endif; ?>
+<?php if ($options['metro-link-4']):?>
+        <div class="grid_4 omega">
+            <section onclick="document.location='<?php echo get_page_link($options['metro-link-4']);?>'">
+                <a class="metro" href="<?php echo get_page_link($options['metro-link-3']);?>"><h2>Quotes</h2></a>
+                <?php echo $options['metro-snip-4'] ?>
+            </section>
+        </div>
+<?php endif; ?>
     </nav>
 
     <div class="clear spacer"></div>

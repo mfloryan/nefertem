@@ -121,7 +121,7 @@ a.rss:hover {
     margin-top: 10px;
     padding: 5px 20px 5px 5px;
     border: solid 1px white;
-    background: url('images/search.png') no-repeat right;
+    background: #fff url('images/search.png') no-repeat;
 }
 
 .index .search:focus {
@@ -133,7 +133,7 @@ a.rss:hover {
     margin: 5px;
     padding: 2px 0;
     width: 290px;
-    background: url('images/search.png') no-repeat right;
+    background: #fff url('images/search.png') no-repeat;
 }
 
 article {
@@ -275,6 +275,7 @@ nav.metro section {
     padding: 10px;
     background-color: #3c233a;
     line-height: 1.2em;
+    cursor: pointer;
 }
 
 nav.metro section h2 {

@@ -13,9 +13,11 @@
             </div>
             <div class="omega grid_4">
                 <a href="<?php echo get_bloginfo('rss2_url'); ?>" class="rss" title="rss feed"></a>
+                <form action="<?php bloginfo('home'); ?>/" id="search_box" method="get">
                 <label>
-                    <input type="text" class="search"/>
+                    <input type="text" class="search" name="s" value="<?php echo esc_html($s); ?>" />
                 </label>
+            </form>
             </div>
         </header>
         <div class="clear spacer"></div>

@@ -50,6 +50,8 @@
                 </nav>
             </div>
             <div class="grid_4 right omega">
-                <input type="text" class="search"/>
+                <form action="<?php bloginfo('home'); ?>/" id="search_box" method="get">
+                <input type="text" class="search" name="s" value="<?php echo esc_html($s); ?>" />
+                </form>
             </div>
         </div>
