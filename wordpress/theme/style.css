@@ -26,10 +26,8 @@ Copyright (C) 2011 Marcin Floryan, mmsquare limited, http://www.mmsquare.com/
 
 body {
     font-size: 16px;
-    /*font-family: 'Ubuntu', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif*/
-    /*font-family:  'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;*/
-    font-family: 'Georgia', serif;
-    color: #222;
+    font-family: 'Liberation Serif', 'Georgia', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', serif;
+    color: #333;
     background-image: url('images/stripes-bar.png');
     background-position: center;
 }
