@@ -28,8 +28,7 @@ body {
     font-size: 16px;
     font-family: 'Liberation Serif', 'Georgia', 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', serif;
     color: #333;
-    background-image: url('images/stripes-bar.png');
-    background-position: center;
+    background: url('images/stripes-bar.png') center;
 }
 
 .page_container {
@@ -40,7 +39,7 @@ body {
 h1 {
     font-size: 2.4em;
     font-weight: 500;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
     color: white;
 }
 
@@ -51,13 +50,13 @@ h1 {
 h2 {
     font-size: 1.5em;
     font-weight: 500;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
     color: White;
 }
 
 h3 {
     font-weight: 500;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
     font-size: 1.3em;
 
     /*border-bottom: solid 1px white;*/
@@ -65,9 +64,8 @@ h3 {
 }
 
 header {
-    background-color: #82005a;
+    background: #82005a url('images/stripes-bar.png');
     color: white;
-    background-image: url('images/stripes-bar.png');
 }
 
 header.metro {
@@ -112,21 +110,18 @@ a.rss {
     margin: 10px;
     width: 20px;
     height: 20px;
-    background-image: url('images/rss.png');
-    background-position: 0 0;
+    background: url('images/rss.png') 0 0;
 }
 
 a.rss:hover {
-    background-position: -20px 0px;
+    background-position: -20px 0;
 }
 
 .index .search {
     margin-top: 10px;
     padding: 5px 20px 5px 5px;
     border: solid 1px white;
-    background-image: url('images/search.png');
-    background-repeat: no-repeat;
-    background-position: right;
+    background: url('images/search.png') no-repeat right;
 }
 
 .index .search:focus {
@@ -138,10 +133,7 @@ a.rss:hover {
     margin: 5px;
     padding: 2px 0;
     width: 290px;
-    background-image: url('images/search.png');
-    background-repeat: no-repeat;
-    background-position: right;
-
+    background: url('images/search.png') no-repeat right;
 }
 
 article {
@@ -177,7 +169,7 @@ article .info {
     color: #28233c;
     font-size: 0.75em;
     padding-left: 5px;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
     /*border: solid 1px #28233c;*/
 }
 
@@ -191,10 +183,7 @@ article .info a:hover {
 
 article blockquote {
     padding: 10px 10px 10px 50px;
-    background-color: #ffd;
-    background-image: url('images/quote.png');
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
+    background: #ffd url('images/quote.png') no-repeat 10px 10px;
     margin-bottom: 5px;
 }
 
@@ -204,7 +193,7 @@ article p {
 
 footer#page-footer {
     font-weight: 500;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
     text-align: center;
     font-size: 0.7em;
     margin-top: 20px;
@@ -321,7 +310,7 @@ nav.topbar a {
     float: left;
     padding: 5px 15px;
     font-weight: 500;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
     color: #3c233a;
     font-size: 1.1em;
