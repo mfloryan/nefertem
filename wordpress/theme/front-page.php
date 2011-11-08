@@ -29,7 +29,7 @@
         $options = get_option('nefertem-options');
     ?>
         <div class="grid_4 alpha">
-            <a class="metro" href="<?php echo $options['metro-link-1'];?>">
+            <a class="metro" href="<?php echo get_page_uri($options['metro-link-1']);?>">
                 <section>
                     <h2>Marcin</h2>
                     <img src="<?php bloginfo('template_directory') ?>/images/marcin-85px.png" class="marcin100" alt="Marcin Floryan"/>
@@ -40,7 +40,7 @@
         </div>
         <div class="grid_4 omega">
                 <section>
-                    <a class="metro" href="<?php echo $options['metro-link-2'];?>">
+                    <a class="metro" href="<?php echo get_page_uri($options['metro-link-2']);?>">
                     <h2>Blog</h2>
                     </a>
                     Recent blog posts:

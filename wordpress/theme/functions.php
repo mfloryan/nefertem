@@ -92,13 +92,12 @@ function nefertem_setting_page($args) {
     echo '<option value=""></option>';
     $pages = get_pages();
     foreach ($pages as $page) {
-        $link = get_page_link( $page->ID );
-        echo '<option value="' . $link .'"';
-        if ($options[$id] == $link) {
+        echo '<option value="' . $page->ID .'"';
+        if ($options[$id] == $page->ID) {
             echo ' selected="selected"';
         }
         echo '>';
-        echo "{$page->post_title} ({$page->ID})";
+        echo "{$page->post_title} ({$page->ID}:{$page->post_name})";
         echo '</option>';
     }
     echo '</select>';
