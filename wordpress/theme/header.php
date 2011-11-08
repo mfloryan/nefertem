@@ -18,7 +18,7 @@
  */
 ?>
 <?php get_template_part("head"); ?>
-<body <?php body_class('page'); ?>>
+<body <?php body_class(); ?>>
 <div class="page_container">
 
 <div class="container_12">
@@ -50,8 +50,10 @@
                 </nav>
             </div>
             <div class="grid_4 right omega">
-                <form action="<?php bloginfo('home'); ?>/" id="search_box" method="get">
-                <input type="text" class="search" name="s" value="<?php echo esc_html($s); ?>" />
+                <form action="<?php bloginfo('home'); ?>/" id="search_box" method="get" class="search-form">
+                    <label>
+                        <input type="text" class="search" name="s" value="<?php echo esc_html($s); ?>" />
+                    </label>
                 </form>
             </div>
         </div>

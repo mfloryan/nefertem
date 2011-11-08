@@ -11,13 +11,14 @@
                     <div id="tagline"><?php bloginfo('description'); ?></div>
                 </hgroup>
             </div>
-            <div class="omega grid_4">
+            <div class="omega grid_4 right">
                 <a href="<?php echo get_bloginfo('rss2_url'); ?>" class="rss" title="rss feed"></a>
-                <form action="<?php bloginfo('home'); ?>/" id="search_box" method="get">
-                <label>
-                    <input type="text" class="search" name="s" value="<?php echo esc_html($s); ?>" />
-                </label>
-            </form>
+                <br style="clear:both;" />
+                <form action="<?php bloginfo('home'); ?>/" id="search_box" class="search-form-metro" method="get">
+                    <label>
+                        <input type="text" class="search" name="s" value="<?php echo esc_html($s); ?>"/>
+                    </label>
+                </form>
             </div>
         </header>
         <div class="clear spacer"></div>

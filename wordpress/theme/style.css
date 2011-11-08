@@ -117,23 +117,28 @@ a.rss:hover {
     background-position: -20px 0;
 }
 
-.index .search {
-    margin-top: 10px;
-    padding: 5px 20px 5px 5px;
-    border: solid 1px white;
-    background: #fff url('images/search.png') no-repeat;
+.search-form-metro {
+
 }
 
-.index .search:focus {
+.search-form-metro .search {
+    margin: 25px 10px 10px 10px;
+    padding: 5px 25px 5px 5px;
+    border: solid 1px white;
+    background: #fff url('images/search.png') no-repeat right center;
+    width: 250px;
+}
+
+.search-form-metro .search:focus {
     border: solid 1px #ffff55;
 }
 
-.page .search {
+.search-form .search {
     border: solid 1px #82005a;
     margin: 5px;
     padding: 2px 0;
     width: 290px;
-    background: #fff url('images/search.png') no-repeat;
+    background: #fff url('images/search.png') no-repeat right center;
 }
 
 article {
