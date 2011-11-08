@@ -31,7 +31,7 @@
                 <div id="tagline" class="pad10"><?php bloginfo( 'description' ); ?></div>
             </div>
             <div class="omega grid_4">
-                <a href="<?php echo get_bloginfo('rss2_url'); ?>http://rrs.com" class="rss" title="rss feed"></a>
+                <a href="<?php echo get_bloginfo('rss2_url'); ?>" class="rss" title="rss feed"></a>
             </div>
         </header>
         <div class="clear spacer2"></div>
