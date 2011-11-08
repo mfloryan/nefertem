@@ -22,12 +22,10 @@
  */
 ?>
 <?php get_header('home'); ?>
+<?php $options = get_option('nefertem-options'); ?>
 
 <div class="grid_8">
     <nav class="metro">
-<?php
-        $options = get_option('nefertem-options');
-    ?>
         <div class="grid_4 alpha">
             <a class="metro" href="<?php echo get_page_uri($options['metro-link-1']);?>">
                 <section>
