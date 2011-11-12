@@ -15,7 +15,7 @@ Copyright (C) 2011 Marcin Floryan, mmsquare limited, http://www.mmsquare.com/
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
+(Wooden Books
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -43,7 +43,7 @@ h1 {
     color: white;
 }
 
-.index h1 {
+.metro h1 {
     font-size: 3em;
 }
 
@@ -79,7 +79,7 @@ header.metro {
     font-style: italic;
 }
 
-.index #tagline {
+.metro #tagline {
     height: 1em;
 }
 
@@ -295,6 +295,10 @@ nav.metro a.metro {
 nav.metro a.metro:hover h2 {
     color: #ffff55;
     text-decoration: none;
+}
+
+nav.metro a {
+    color: #ffff55;
 }
 
 nav.topbar {
