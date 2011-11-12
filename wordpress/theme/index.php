@@ -38,7 +38,17 @@
 				<?php endwhile; ?>
 
                 <?php comments_template( '', true ); ?>
+
+            <nav id="roll">
+                <ul>
+                    <li id="prev"><?php previous_post_link('&laquo; %link') ?></li>
+                    <li id="next"><?php next_post_link('%link &raquo;') ?></li>
+                </ul>
+                <br class="clear" />
+            </nav>
+
         </div>
+
 
 <?php get_sidebar(); ?>
 

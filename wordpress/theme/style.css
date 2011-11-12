@@ -332,6 +332,37 @@ nav.topbar a:hover {
     text-decoration: none;
 }
 
+nav#roll {
+    border-top: 3px solid #28233C;
+    background-color: #ffff55;
+    padding: 10px;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+nav#roll a {
+    color: #28233C;
+}
+
+nav#roll ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav#roll ul li {
+    list-style: none;
+}
+
+nav#roll ul li#prev {
+    float: left;
+}
+
+nav#roll ul li#next {
+    float: right;
+}
+
+
 ul {
     padding-left: 20px;
 }
