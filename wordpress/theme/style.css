@@ -362,6 +362,9 @@ nav#roll ul li#next {
     float: right;
 }
 
+#commentform .form-allowed-tags {
+    font-size: 0.6em;
+}
 
 ul {
     padding-left: 20px;
