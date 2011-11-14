@@ -126,7 +126,6 @@ class Nefertem_Twitter_Widget_Settings {
 
         return $instance;
     }
-
 }
 
 class Nefertem_Twitter_Widget extends WP_Widget {
@@ -153,7 +152,11 @@ class Nefertem_Twitter_Widget extends WP_Widget {
         $hidereplies = (bool) $settings->hideReplies;
 		$include_retweets = (bool) $settings->includeRetweets;
 
-		echo "$before_widget";
+        if ($settings->showIntents || $settings->showFollowButton) {
+            wp_enqueue_script('twitter-widgets', 'http://platform.twitter.com/widgets.js', array(), '1.0.0', true);
+        }
+
+        echo "$before_widget";
         echo "{$before_title}<a href='" . esc_url( "http://twitter.com/{$account}" ) . "'>" . esc_html($title) . "</a>{$after_title}";
 
         $tweets = $this->get_tweets($account, $show, $hidereplies);
@@ -201,13 +204,23 @@ class Nefertem_Twitter_Widget extends WP_Widget {
                 }
                 echo '</span>';
 
+
+
                 echo "</li>\n";
 
                 unset( $tweet_id );
 				$tweets_out++;
 			}
 
-			echo "</ul>\n";
+            echo "</ul>\n";
+
+            if ($settings->showFollowButton) {
+                echo '<div class="follow-button">';
+                echo "<a href=\"http://twitter.com/$account\" class=\"twitter-follow-button\" title=\"Follow $account\" data-lang=\"en\">@{$account}</a>";
+                echo '</div>';
+            }
+
+
         } else  {
             if ( 401 == get_transient( 'widget-twitter-response-code-' . $this->number ) )
          				echo '<p>' . wp_kses( sprintf( __( 'Error: Please make sure the Twitter account is <a href="%s">public</a>.', 'nefertem' ), 'http://support.twitter.com/forums/10711/entries/14016' ), array( 'a' => array( 'href' => true ) ) ) . '</p>';
@@ -364,27 +377,6 @@ class Nefertem_Twitter_Widget extends WP_Widget {
         if ( $show_follow_button ) echo ' checked="checked"';
         echo ' /> ' . esc_html__( 'Show follow button', 'nefertem' ) . '</label></p>';
 	}
-
-	/**
-	 * Link a Twitter user mentioned in the tweet text to the user's page on Twitter.
-	 *
-	 * @param array $matches regex match
-	 * @return string Tweet text with inserted @user link
-	 */
-	function _wpcom_widget_twitter_username( $matches ) { // $matches has already been through wp_specialchars
-		return "$matches[1]@<a href='" . esc_url( 'http://twitter.com/' . urlencode( $matches[3] ) ) . "'>$matches[3]</a>";
-	}
-
-	/**
-	 * Link a Twitter hashtag with a search results page on Twitter.com
-	 *
-	 * @param array $matches regex match
-	 * @return string Tweet text with inserted #hashtag link
-	 */
-	function _wpcom_widget_twitter_hashtag( $matches ) { // $matches has already been through wp_specialchars
-		return "$matches[1]<a href='" . esc_url( 'http://twitter.com/search?q=%23' . urlencode( $matches[3] ) ) . "'>#$matches[3]</a>";
-	}
-
 }
 
 add_action( 'widgets_init', 'nefertem_twitter_widget_init' );

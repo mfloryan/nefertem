@@ -19,6 +19,7 @@
     wp_enqueue_script( "jquery" );
     wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/modernizr-1.7.min.js', array(), '1.7', false );
     wp_enqueue_script( 'nefertem', get_template_directory_uri().'/js/nefertem.js', array('jquery'), '1.0', true );
+    //wp_enqueue_script('twitter-widgets', 'http://platform.twitter.com/widgets.js', array(), '1.0.0', true);
     if (is_singular()) wp_enqueue_script('comment-reply');
 ?>
 <!DOCTYPE html>
