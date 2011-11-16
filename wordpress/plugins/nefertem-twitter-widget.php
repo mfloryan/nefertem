@@ -156,8 +156,10 @@ class Nefertem_Twitter_Widget extends WP_Widget {
             wp_enqueue_script('twitter-widgets', 'http://platform.twitter.com/widgets.js', array(), '1.0.0', true);
         }
 
-        echo "$before_widget";
-        echo "{$before_title}<a href='" . esc_url( "http://twitter.com/{$account}" ) . "'>" . esc_html($title) . "</a>{$after_title}";
+        $widgetContent = "";
+
+        $widgetContent .= "$before_widget";
+        $widgetContent .= "{$before_title}<a href='" . esc_url( "http://twitter.com/{$account}" ) . "'>" . esc_html($title) . "</a>{$after_title}";
 
         $tweets = $this->get_tweets($account, $show, $hidereplies);
 
@@ -170,7 +172,7 @@ class Nefertem_Twitter_Widget extends WP_Widget {
                 $before_tweet = '';
             }
 
-			echo "<ul class=\"tweets\">\n";
+            $widgetContent .= "<ul class=\"tweets\">\n";
 
 			$tweets_out = 0;
 
@@ -189,46 +191,45 @@ class Nefertem_Twitter_Widget extends WP_Widget {
 
                 $created_at = str_replace( '+0000', '', $tweet['created_at'] ) . ' UTC'; // Twitter's datetime format is strange, refactor for the sake of PHP4
 
-                echo "<li>";
+                $widgetContent .= "<li>";
 
-                echo $before_tweet;
-                echo $text;
-                echo "<span class=\"meta\"><a href=\"" . esc_url( "http://twitter.com/{$account}/statuses/{$tweet_id}" ) . '" title="'. $created_at .'" class="timesince">' . str_replace( ' ', '&nbsp;', wpcom_time_since( strtotime( $created_at ) ) ) ."&nbsp;ago</a>";
+                $widgetContent .= $before_tweet;
+                $widgetContent .= $text;
+                $widgetContent .= "<span class=\"meta\"><a href=\"" . esc_url( "http://twitter.com/{$account}/statuses/{$tweet_id}" ) . '" title="'. $created_at .'" class="timesince">' . str_replace( ' ', '&nbsp;', wpcom_time_since( strtotime( $created_at ) ) ) ."&nbsp;ago</a>";
 
                 if ( 'true' == $settings->showIntents ) {
-                    echo '<span class="intent-meta">';
-                    echo "<a href=\"http://twitter.com/intent/favorite?tweet_id={$tweet_id}\" title=\"Favourite\" class=\"favorite\">Favourite</a>";
-                    echo "<a href=\"http://twitter.com/intent/retweet?tweet_id={$tweet_id}\" title=\"Retweet\" class=\"retweet\">Retweet</a>";
-                    echo "<a href=\"http://twitter.com/intent/tweet?in_reply_to={$tweet_id}\" title=\"Reply\" class=\"in-reply-to\">Reply</a>";
-                    echo '</span>';
+                    $widgetContent .= '<span class="intent-meta">';
+                    $widgetContent .= "<a href=\"http://twitter.com/intent/favorite?tweet_id={$tweet_id}\" title=\"Favourite\" class=\"favorite\">Favourite</a>";
+                    $widgetContent .= "<a href=\"http://twitter.com/intent/retweet?tweet_id={$tweet_id}\" title=\"Retweet\" class=\"retweet\">Retweet</a>";
+                    $widgetContent .= "<a href=\"http://twitter.com/intent/tweet?in_reply_to={$tweet_id}\" title=\"Reply\" class=\"in-reply-to\">Reply</a>";
+                    $widgetContent .= '</span>';
                 }
-                echo '</span>';
+                $widgetContent .= '</span>';
 
-
-
-                echo "</li>\n";
+                $widgetContent .= "</li>\n";
 
                 unset( $tweet_id );
 				$tweets_out++;
 			}
 
-            echo "</ul>\n";
+            $widgetContent .= "</ul>\n";
 
             if ($settings->showFollowButton) {
-                echo '<div class="follow-button">';
-                echo "<a href=\"http://twitter.com/$account\" class=\"twitter-follow-button\" title=\"Follow $account\" data-lang=\"en\">@{$account}</a>";
-                echo '</div>';
+                $widgetContent .= '<div class="follow-button">';
+                $widgetContent .= "<a href=\"http://twitter.com/$account\" class=\"twitter-follow-button\" title=\"Follow $account\" data-lang=\"en\">@{$account}</a>";
+                $widgetContent .= '</div>';
             }
-
 
         } else  {
             if ( 401 == get_transient( 'widget-twitter-response-code-' . $this->number ) )
-         				echo '<p>' . wp_kses( sprintf( __( 'Error: Please make sure the Twitter account is <a href="%s">public</a>.', 'nefertem' ), 'http://support.twitter.com/forums/10711/entries/14016' ), array( 'a' => array( 'href' => true ) ) ) . '</p>';
+                $widgetContent .= '<p>' . wp_kses( sprintf( __( 'Error: Please make sure the Twitter account is <a href="%s">public</a>.', 'nefertem' ), 'http://support.twitter.com/forums/10711/entries/14016' ), array( 'a' => array( 'href' => true ) ) ) . '</p>';
          			else
-         				echo '<p>' . esc_html__( 'Error: Twitter did not respond. Please wait a few minutes and refresh this page.', 'nefertem' ) . '</p>';
+                 $widgetContent .='<p>' . esc_html__( 'Error: Twitter did not respond. Please wait a few minutes and refresh this page.', 'nefertem' ) . '</p>';
         }
 
-		echo $after_widget;
+        $widgetContent .= $after_widget;
+
+        return $widgetContent;
 	}
 
     private function get_text_with_links_from_entities($tweet) {
