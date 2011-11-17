@@ -133,6 +133,7 @@ class Nefertem_Twitter_Widget extends WP_Widget {
 	function Nefertem_Twitter_Widget() {
 		$widget_ops = array( 'classname' => 'widget_twitter', 'description' => __( 'Display your tweets from Twitter', 'nefertem' ) );
 		parent::WP_Widget( 'nefertem-twitter', __( 'Twitter (Nefertem)', 'nefertem' ), $widget_ops );
+        wp_enqueue_script('twitter-widgets', 'http://platform.twitter.com/widgets.js', array(), '1.0.0', true);
 	}
 
 	function widget( $args, $instance ) {
@@ -151,10 +152,6 @@ class Nefertem_Twitter_Widget extends WP_Widget {
 
         $hidereplies = (bool) $settings->hideReplies;
 		$include_retweets = (bool) $settings->includeRetweets;
-
-        if ($settings->showIntents || $settings->showFollowButton) {
-            wp_enqueue_script('twitter-widgets', 'http://platform.twitter.com/widgets.js', array(), '1.0.0', true);
-        }
 
         $widgetContent = "";
 
@@ -229,7 +226,7 @@ class Nefertem_Twitter_Widget extends WP_Widget {
 
         $widgetContent .= $after_widget;
 
-        return $widgetContent;
+        echo $widgetContent;
 	}
 
     private function get_text_with_links_from_entities($tweet) {
