@@ -362,6 +362,81 @@ nav#roll ul li#next {
     float: right;
 }
 
+#comments {
+    margin-top: 20px;
+}
+
+#comments h2 {
+    background-color: #3c233a;
+    padding: 5px;
+}
+
+#comments h3#reply-title {
+    background-color: #ff5;
+    color: #82005a;
+    padding: 5px;
+    margin-top: 20px;
+    border-bottom: solid 2px #82005a;
+}
+
+#comments ol.commentlist {
+    list-style: none;
+}
+
+#comments ol.commentlist li {
+    padding: 10px;
+    list-style: none;
+    border-bottom: solid 1px #82005a;
+}
+
+.comment img.avatar {
+    float:left;
+}
+
+.comment .comment-meta, .comment .comment-author, .comment .comment-content  {
+    margin-left: 60px;
+}
+
+.comment .comment-meta {
+    font-size: 0.8em;
+}
+
+.comment .comment-content {
+    clear: both;
+}
+
+.comment .reply {
+    text-align: right;
+}
+
+#commentform textarea {
+    display: block;
+    width: 100%;
+    border-color: #82005a;
+}
+
+#commentform input[type=text] {
+    display: block;
+    width: 100%;
+    border: solid 1px #82005a;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+
+#commentform textarea:focus, #commentform input:focus {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0 0 5px #ffff55;
+    -webkit-box-shadow: 0 0 5px #ffff55;
+    outline: none;
+}
+
+#commentform label {
+    margin-top: 5px;
+    color: #3c233a;
+}
+
 #commentform .form-allowed-tags {
     font-size: 0.6em;
 }
