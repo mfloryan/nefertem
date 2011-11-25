@@ -8,3 +8,5 @@
     <?php the_content(); ?>
 
 </article>
+
+<br style="clear: both;" />
