@@ -409,6 +409,17 @@ nav#roll ul li#next {
     text-align: right;
 }
 
+#commentform p.comment-notes {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+#comments #respond p.logged-in-as {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
 #commentform textarea {
     display: block;
     width: 100%;
@@ -421,7 +432,6 @@ nav#roll ul li#next {
     border: solid 1px #82005a;
     padding: 5px;
     margin-bottom: 10px;
-
 }
 
 #commentform textarea:focus, #commentform input:focus {
