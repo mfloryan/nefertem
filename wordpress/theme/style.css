@@ -397,8 +397,17 @@ nav#roll ul li#next {
     background-color: #ffd;
 }
 
+#comments li.pingback p {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: solid 1px #82005a;
+}
+
+
+
 #comments a.comment-reply-link {
     padding: 5px;
+    font-size: 0.8em;
 }
 
 #comments a.comment-reply-link:hover {
@@ -579,4 +588,5 @@ article .wp-caption img {
     margin: 0;
     padding: 2px;
     color: #3c233a;
+    line-height: 1.2em;
 }
