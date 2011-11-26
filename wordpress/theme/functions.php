@@ -152,7 +152,7 @@ function nefertem_comment( $comment, $args, $depth ) {
 
 				<div class="comment-author vcard">
 
-					<?php printf( __( '%s <span class="says">says:</span>', 'toolbox' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( __( '%s <span class="says">says:</span>', 'toolbox' ), sprintf( '<strong>%s</strong>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 
                 <?php if ( $comment->comment_approved == '0' ) : ?>

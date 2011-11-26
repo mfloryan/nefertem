@@ -384,9 +384,30 @@ nav#roll ul li#next {
 }
 
 #comments ol.commentlist li {
-    padding: 10px;
     list-style: none;
+}
+
+#comments li div.comment {
+    margin: 5px;
+    padding: 5px;
     border-bottom: solid 1px #82005a;
+}
+
+#comments li.bypostauthor div.comment {
+    background-color: #ffd;
+}
+
+#comments a.comment-reply-link {
+    padding: 5px;
+}
+
+#comments a.comment-reply-link:hover {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    background-color: #82005a;
 }
 
 .comment img.avatar {
