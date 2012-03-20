@@ -41,7 +41,7 @@
     }
 ?>
  <b><a href="<?php echo $options['google-profile'];?>" rel="author"><?php bloginfo('name'); ?></a></b>
-            licensed under <a rel="license" href="license.html"><img alt="Creative Commons Licence" class="cc-logo" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+            licensed under <a rel="license" href="<?php echo get_page_link($options['license-link']) ?>"><img alt="Creative Commons Licence" class="cc-logo" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
             | Powered by <a href="http://wordpress.org/" rel="generator" title="Semantic Personal Publishing Platform">WordPress</a>
             | <a href="https://github.com/mfloryan/nefertem">nefertem</a> theme based on <a href="http://960.gs/">960.gs grid</a> using <a href="http://font.ubuntu.com/" rel="font">Ubuntu</a> font
         </footer>

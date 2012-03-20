@@ -59,13 +59,14 @@ function nefertem_theme_admin_options_init() {
                        array('id' => "google-profile"));
 
     add_settings_field('metro-link-1', 'Link for Metro 1', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-1"));
-
     add_settings_field('metro-snip-1', 'Snippet for Metro 1', 'nefertem_setting_textarea', 'nefertem', 'nefertem-options-section', array('id' => "metro-snip-1"));
     add_settings_field('metro-link-2', 'Link for Metro 2 (Blog)', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-2"));
     add_settings_field('metro-link-3', 'Link for Metro 3', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-3"));
     add_settings_field('metro-snip-3', 'Snippet for Metro 3', 'nefertem_setting_textarea', 'nefertem', 'nefertem-options-section', array('id' => "metro-snip-3"));
     add_settings_field('metro-link-4', 'Link for Metro 4', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "metro-link-4"));
     add_settings_field('metro-snip-4', 'Snippet for Metro 4', 'nefertem_setting_textarea', 'nefertem', 'nefertem-options-section', array('id' => "metro-snip-4"));
+    add_settings_field('license-link', 'Link for license page', 'nefertem_setting_page', 'nefertem', 'nefertem-options-section', array('id' => "license-link"));
+
 }
 
 function nefertem_options_section_text() {
