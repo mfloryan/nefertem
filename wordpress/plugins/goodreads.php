@@ -67,26 +67,31 @@ class Nefertem_Goodreads {
         $html .= '<ul class="goodreads">';
         foreach ($books->reviews->review as $review) {
             $html .= '<li class="book">';
-            $html .= '<img class="cover" src="'.$review->book->small_image_url . '" />';
-            $html .= $review->book->title;
-            $html .= '('. $review->book->isbn .')';
-            $html .= '<br />';
+            // $html .= '<img class="cover" src="'.$review->book->small_image_url . '" />';
+            $html .= '<strong>'.$review->book->title.'</strong>';
+            if ($review->book->isbn13 != '') {
+                $html .= '('. $review->book->isbn13 .')';
+            } else if ($review->book->isbn != '') $html .= '('. $review->book->isbn .')';
 
             $authors = array();
             foreach ($review->book->authors->author as $author) {
                 array_push($authors,$author->name);
             }
             unset($author);
-            $html .= implode(", ",$authors);
-            $html .= '<br />';
+            $html .= ' <em>by '.implode(", ",$authors)."</em>";
+
             if ($review->rating != 0) {
-                $html .= $review->rating;
-                $html .= '<br />';
+                $html .= ' - gave '.$review->rating.' out of 5';
             }
+
+            $html .= ' <a href="'.$review->link.'"> &raquo; more...</a>';
             $html .= '</li>';
         }
-        unset($review);
+
+
         $html .= '</ul>';
+        //$html .= '<pre>'.print_r($review,true).'</pre>';
+        unset($review);
         return $html;
     }
 
