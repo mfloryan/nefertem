@@ -22,8 +22,12 @@
  */
 ?>
 <?php get_header(); ?>
+
         <div class="clear spacer2"></div>
-        <div class="grid_8">
+
+<?php get_sidebar('narrow'); ?>
+
+        <div class="grid_9">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -39,6 +43,10 @@
 
                 <?php comments_template( '', true ); ?>
 
+
+        </div>
+
+        <div class="grid_12">
             <nav id="roll">
                 <ul>
                     <li id="prev"><?php previous_post_link('&laquo; %link') ?></li>
@@ -48,8 +56,5 @@
             </nav>
 
         </div>
-
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
