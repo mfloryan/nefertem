@@ -143,6 +143,7 @@ a.rss:hover {
 
 article {
     line-height: 1.5em;
+    color: #000;
 }
 
 article h2 a {
