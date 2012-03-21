@@ -33,8 +33,8 @@ class Nefertem_Goodreads {
 
     const goodreadsApi = 'http://www.goodreads.com/review/list/';
 
-    private $apiKey = 'imjnFTUP1wilIH0idWffMw'; //TODO: From Settings
-    private $goodReadsUserid = "2924969"; //TODO: From Settings
+    private $apiKey;
+    private $goodReadsUserid;
     private $shelfName;
     private $perPage = 5;
     private $sort;
@@ -58,6 +58,9 @@ class Nefertem_Goodreads {
                 $this->sort = 'date_read';
                 break;
         }
+
+        $this->apiKey = get_option('goodreads_api_key');
+        $this->goodReadsUserid = get_option('goodreads_user_id');
     }
 
     public function getContent()
@@ -157,4 +160,50 @@ class Nefertem_Goodreads {
 }
 
 add_shortcode( 'goodreads', 'goodreads_shortcode_handler' );
-?>
+
+// ------------------------------------------------------------------
+// Add all your sections, fields and settings during admin_init
+// ------------------------------------------------------------------
+//
+
+function goodreads_settings_api_init() {
+    // Add the section to reading settings so we can add our
+    // fields to it
+    add_settings_section('goodreads_setting_section',
+        'Goodreads Plugin settings',
+        'goodreads_setting_section_callback_function',
+        'general');
+
+    // Add the field with the names and function to use for our new
+    // settings, put it in our new section
+    add_settings_field('goodreads_api_key',
+        'API Key',
+        'goodreads_api_key_callback_function',
+        'general',
+        'goodreads_setting_section');
+
+    add_settings_field('goodreads_user_id',
+        'User ID',
+        'goodreads_user_id_callback_function',
+        'general',
+        'goodreads_setting_section');
+
+    // Register our setting so that $_POST handling is done for us and
+    // our callback function just has to echo the <input>
+    register_setting('general','goodreads_api_key');
+    register_setting('general','goodreads_user_id');
+}
+
+add_action('admin_init', 'goodreads_settings_api_init');
+
+function goodreads_setting_section_callback_function() {
+    echo '<p>Enter the required values below to use the goodreads shortcode.</p>';
+}
+
+function goodreads_api_key_callback_function() {
+    echo '<input name="goodreads_api_key" type="text" value="'.get_option('goodreads_api_key').'">';
+}
+
+function goodreads_user_id_callback_function() {
+    echo '<input name="goodreads_user_id" type="text" value="'.get_option('goodreads_user_id').'">';
+}
